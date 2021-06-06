@@ -1,0 +1,40 @@
+<div class="container">
+    <form [formGroup]="productDetailsForm" (ngSubmit)="addorUpdateProductDetails()">
+        <div class="row">
+        <div class="col-25">
+          <label for="Pname">Product Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="Pname" name="productName" placeholder="Product name.." formControlName="productName" /> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="desc">Description</label>
+        </div>
+        <div class="col-75">
+          <textarea type="text" id="desc" name="description" placeholder="About Product.." formControlName="description"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="price">Price</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="price" name="price" placeholder="Product Price.." formControlName="price">
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="quantity">Number of Items Avail</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="quantity" name="quantity" placeholder="Number of Items Avail.." formControlName="quantity">
+          </div>
+      </div>
+      <div class="row">
+        <button type="submit">{{isUpdate ? 'Update' : 'Submit'}} </button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </div>

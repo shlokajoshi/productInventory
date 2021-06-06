@@ -1,0 +1,20 @@
+<div id="id01" class="modal">
+  <form class="modal-content">
+    <div class="imgcontainer">
+      <img src="../../assets/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" #uname name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" #pass name="psw" required>
+        
+      <button type="submit" (click)="login(uname.value,pass.value)">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
