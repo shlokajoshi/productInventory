@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { filter } from 'rxjs/operators';  
 import { RemoveProductDetails } from '../actions/product-details.actions';
 import { selectProductDetailList, State } from '../reducers';
 
@@ -29,8 +30,8 @@ export class ShowUserDetailsComponent implements OnInit {
   }
 
   search(searchKey:any){
-    let url=`https://run.mocky.io/v3/1ed1a4f3-5325-4168-97de-db55465be079`;
-    this.http.get(url);
+    let url=`https://run.mocky.io/v3/ac3dd43a-0dbd-4a63-8b18-5cac86a161aa`;
+    this.http.get(url).pipe(filter((obj) => obj.name.includes(searchKey)));
   }
 
 }

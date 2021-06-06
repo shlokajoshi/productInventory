@@ -6,9 +6,8 @@
   <div class="column" *ngFor="let details of productDetails">
     <div class="card">
       <h3>{{ details.productName }}</h3>
-      <p>About : {{ details.description }}</p>
+      <p>Article number : {{ details.productSku }}</p>
       <p>Price: {{ details.price }}</p>
-      <p>Available: {{ details.quantity }}</p>
       <button type="button" (click)="updateItem(details.id)">Update</button>
       <button type="button" (click)="deleteItem(details.id)">Delete</button>
     </div>

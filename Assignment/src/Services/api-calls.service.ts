@@ -11,11 +11,11 @@ export class ApiCallsService {
   constructor(private http: HttpClient,private router:Router) { }
 
   setDetailsData(body: Product){
-    let url=`https://run.mocky.io/v3/1ed1a4f3-5325-4168-97de-db55465be079`;
+    let url=`https://run.mocky.io/v3/ac3dd43a-0dbd-4a63-8b18-5cac86a161aa`;
     return this.http.post(url,body);
   }
   getDetailsData(){
-    let url=`https://run.mocky.io/v3/1ed1a4f3-5325-4168-97de-db55465be079`;
+    let url=`https://run.mocky.io/v3/ac3dd43a-0dbd-4a63-8b18-5cac86a161aa`;
     //can add get api url and body to get saved data
     return this.http.get(url);
   }

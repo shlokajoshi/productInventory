@@ -32,9 +32,8 @@ export class AddProductDetailsComponent implements OnInit {
   productDetailsForm = this.fb.group({
     id: [Math.floor(Math.random() * 100)],
     productName: ['', Validators.required],
-    description: ['', Validators.required],
+    productSku: ['', Validators.required],
     price: ['', Validators.required],
-    quantity: ['', Validators.required],
   });
 
   ngOnInit(): void {
@@ -50,9 +49,8 @@ export class AddProductDetailsComponent implements OnInit {
             this.updateObject = element;
             this.productDetailsForm.get('id')?.patchValue(element.id);
             this.productDetailsForm.get('productName')?.patchValue(element.productName);
-            this.productDetailsForm.get('description')?.patchValue(element.description);
+            this.productDetailsForm.get('productSku')?.patchValue(element.productSku);
             this.productDetailsForm.get('price')?.patchValue(element.price);
-            this.productDetailsForm.get('quantity')?.patchValue(element.quantity);
           }
         });
       }
