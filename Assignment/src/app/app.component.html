@@ -1,9 +1,19 @@
-<div class="topnav" id="myTopnav">
+<!-- <div class="topnav" id="myTopnav">
     <nav>
         <a id="tab-login" routerLink="login" routerLinkActive="is-active" *ngIf="!isLoggedIn">Login</a>
-        <a id="tab-add" routerLink="add" routerLinkActive="is-active">Add</a>
-        <a id="tab-show" routerLink="show" routerLinkActive="is-active">Show</a>
+        <a id="tab-add" routerLink="inventory/add" routerLinkActive="is-active">Add</a>
+        <a id="tab-show" routerLink="inventory/show" routerLinkActive="is-active">Show</a>
         <a id="tab-show" (click)="logout()" routerLinkActive="is-active" *ngIf="isLoggedIn">Logout</a>
       </nav>
   </div>
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet> -->
+  <mat-drawer-container>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <p>Menu</p>
+    </mat-drawer>
+    <div class="sidenav-content">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+</mat-drawer-container>

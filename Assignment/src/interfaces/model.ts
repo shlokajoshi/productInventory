@@ -1,6 +1,6 @@
 export interface Product {
-    productId: number,
+    id: number,
     productName: string,
     productSku :number,
-    productPrice : number
+    productPrice : number 
 }

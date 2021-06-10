@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter } from 'rxjs/operators';  
-import { RemoveProductDetails } from '../actions/product-details.actions';
-import { selectProductDetailList, State } from '../reducers';
+import { RemoveProductDetails } from '../../actions/product-details.actions';
+import { selectProductDetailList, State } from '../../reducers';
 
 @Component({
   selector: 'app-show-product-details',
@@ -26,12 +26,12 @@ export class ShowUserDetailsComponent implements OnInit {
     this.store.dispatch(new RemoveProductDetails(itemId,this.productDetails));
   }
   updateItem(itemId:number){
-    this.route.navigate([`add/${itemId}`]);
+    this.route.navigate([`inventory/add/${itemId}`]);
   }
 
-  search(searchKey:any){
-    let url=`https://run.mocky.io/v3/ac3dd43a-0dbd-4a63-8b18-5cac86a161aa`;
-    this.http.get(url).pipe(filter((obj) => obj.name.includes(searchKey)));
-  }
+  // search(searchKey:any){
+  //   let url=`https://run.mocky.io/v3/ac3dd43a-0dbd-4a63-8b18-5cac86a161aa`;
+  //   this.http.get(url).pipe(filter((obj) => obj.name.includes(searchKey)));
+  // }
 
 }

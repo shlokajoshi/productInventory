@@ -6,8 +6,8 @@ import { Product } from 'src/interfaces/model';
 import {
   AddProductDetails,
   UpdateProductDetails,
-} from '../actions/product-details.actions';
-import { selectProductDetailList, State } from '../reducers';
+} from '../../actions/product-details.actions';
+import { selectProductDetailList, State } from '../../reducers';
 
 @Component({
   selector: 'app-add-user-details',
@@ -15,7 +15,7 @@ import { selectProductDetailList, State } from '../reducers';
   styleUrls: ['./add-product-details.component.scss'],
 })
 export class AddProductDetailsComponent implements OnInit {
-  details: any;
+  details: Product[] =[];
   isUpdate: boolean = false;
   updateObject: any;
   constructor(
@@ -72,6 +72,6 @@ export class AddProductDetailsComponent implements OnInit {
       }
     }
     alert('Action Successful!');
-    this.router.navigate(['show']);
+    this.router.navigate([`inventory/show`]);
   }
 }

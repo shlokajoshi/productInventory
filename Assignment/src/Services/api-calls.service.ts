@@ -16,7 +16,6 @@ export class ApiCallsService {
   }
   getDetailsData(){
     let url=`https://run.mocky.io/v3/ac3dd43a-0dbd-4a63-8b18-5cac86a161aa`;
-    //can add get api url and body to get saved data
     return this.http.get(url);
   }
 

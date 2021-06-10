@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private apiservice: ApiCallsService,private router: Router) {
     if(this.apiservice.loggedIn)
     {
-      this.router.navigate(['add']);
+      this.router.navigate(['inventory/add']);
     }
    }
 
