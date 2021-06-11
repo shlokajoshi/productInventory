@@ -7,6 +7,8 @@ const routes: Routes = [
   // {path: '', redirectTo:'/login', pathMatch: 'full'},
   {path : 'login', component:  LoginComponent},
   {path : 'inventory', loadChildren: () => import('./inventory/add-product-details.module').then(m => m.AddUserDetailsModule) ,canActivate: [AuthServiceGuard]},
+  {path :'cart', loadChildren: ()=> import('./cart/cart.module').then(m=> m.CartModule),canActivate: [AuthServiceGuard]}
+
 ];
 
 @NgModule({
