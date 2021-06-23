@@ -6,8 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { ShowUserDetailsComponent } from './inventory/show-user-details/show-product-details.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { AuthServiceGuard } from 'src/Services/auth-service.guard';
 
@@ -17,11 +16,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpInterceptorService } from './interceptors/http-interceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // ShowUserDetailsComponent,
     LoginComponent
   ],
   imports: [
@@ -36,9 +35,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+    
+   
   ],
-  providers: [AuthServiceGuard],
+  providers: [AuthServiceGuard,
+    //interceptors
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

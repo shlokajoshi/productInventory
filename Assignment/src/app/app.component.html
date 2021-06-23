@@ -7,7 +7,8 @@
       </nav>
   </div>
   <router-outlet></router-outlet> -->
-  <mat-drawer-container class="container" autosize>
+  <app-login *ngIf="!isLoggedIn"></app-login>
+  <mat-drawer-container class="container" autosize *ngIf="isLoggedIn">  
     <mat-drawer #drawer class="sidenav">
         <button color="primary" mat-button routerLink="/inventory">Inventory</button>
         <button color="primary" mat-button routerLink="/cart">Cart</button>
@@ -19,7 +20,7 @@
                     <mat-icon>menu</mat-icon>
                 </button>
                 <span class="spacer">Title</span>
-                <mat-icon>logout</mat-icon>     
+                <mat-icon  (click)="logout()">logout</mat-icon>     
             </mat-toolbar-row>
         </mat-toolbar>
         <router-outlet></router-outlet>
